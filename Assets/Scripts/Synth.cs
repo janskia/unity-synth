@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
@@ -9,10 +10,12 @@ public class Synth : MonoBehaviour
     private float phase = 0.0F;
     private double sampleRate = 0.0F;
     private bool running = false;
+    private Sampler sampler;
 
     void Start()
     {
         sampleRate = AudioSettings.outputSampleRate;
+        sampler = GetComponent<Sampler>();
         running = true;
     }
 
@@ -22,18 +25,23 @@ public class Synth : MonoBehaviour
             return;
 
         double sample = AudioSettings.dspTime * sampleRate;
-        int dataLen = data.Length / channels;
+        int dataLength = data.Length / channels;
 
-        for (int n = 0; n < dataLen; n++)
+        for (int n = 0; n < dataLength; n++)
         {
-            float x = amp * Mathf.Sin(phase);
+            float x = amp * EvaluateWaveshape(phase);
 
             for (int i = 0; i < channels; i++)
             {
                 data[n * channels + i] += x;
             }
 
-            phase += (float)(frequency/sampleRate * 2 * Mathf.PI);
+            phase += (float)(frequency / sampleRate * 2 * Mathf.PI);
         }
+    }
+
+    private float EvaluateWaveshape(float phase)
+    {
+        return sampler.EvaluateWaveshape(phase);
     }
 }
