@@ -159,7 +159,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -475,9 +475,9 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 1, y: 0.2, z: 0}
-  - {x: 1, y: -1.26, z: 0}
-  - {x: 1.6, y: 0.65, z: 0}
+  - {x: 2.7410903, y: 1.8425376, z: 0}
+  - {x: 9.311241, y: -3.00109, z: 0}
+  - {x: 13.125761, y: -0.7429061, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
