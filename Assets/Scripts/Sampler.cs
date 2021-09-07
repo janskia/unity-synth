@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Sampler : MonoBehaviour
 {
+    public WavePreview wavePreview;
     public int samplesArraySize = 256;
     public AnimationCurve curve;
 
@@ -17,8 +18,9 @@ public class Sampler : MonoBehaviour
         for (int i = 0; i < samples.Length; i++)
         {
             //  samples[i] = Mathf.Sin((float)i / samples.Length * 2 * Mathf.PI);
-            samples[i] = curve.Evaluate((float)i / samples.Length);
+            samples[i] = Mathf.Clamp(curve.Evaluate((float)i / samples.Length), -1f, 1f);
         }
+        wavePreview.ShowValues(samples);
     }
 
     public float EvaluateWaveshape(float phase)
