@@ -10,12 +10,12 @@ public class Synth : MonoBehaviour
     private float phase = 0.0F;
     private double sampleRate = 0.0F;
     private bool running = false;
-    private Sampler sampler;
+    private CurveSampler sampler;
 
     void Start()
     {
         sampleRate = AudioSettings.outputSampleRate;
-        sampler = GetComponent<Sampler>();
+        sampler = GetComponent<CurveSampler>();
         running = true;
     }
 
