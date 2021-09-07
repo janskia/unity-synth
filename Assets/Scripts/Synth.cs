@@ -37,6 +37,10 @@ public class Synth : MonoBehaviour
             }
 
             phase += (float)(frequency / sampleRate * 2 * Mathf.PI);
+            if(phase> 2 * Mathf.PI)
+            {
+                phase -= 2 * Mathf.PI;
+            }
         }
     }
 
