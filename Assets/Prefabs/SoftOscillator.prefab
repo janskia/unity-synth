@@ -299,7 +299,7 @@ MonoBehaviour:
   sampler2: {fileID: 5771955850069274821}
   sampler3: {fileID: 5771955851198761486}
   sampler4: {fileID: 5771955849273062683}
-  randomize: 0
+  randomize: 1
   randomizationSpeed: 0.05
   blend1: 0
   blend2: 0
@@ -505,8 +505,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 0.5019608}
+      key1: {r: 1, g: 1, b: 1, a: 0.5019608}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}

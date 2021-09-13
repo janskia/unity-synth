@@ -235,13 +235,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c96414e4222459647999b05d01c1e2df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frequency: 220
+  frequency: 55
   amp: 0.5
   pan: 0
-  instances: 1
+  instances: 6
   frequencySpread: 1
-  panSpread: 0.2
-  volumeSpread: 0.5
+  panSpread: 1
+  volumeSpread: 0.7
   oscillatorPrefab: {fileID: 5771955849745633020, guid: 6b41fd7d9d02f0a49aa41bf50aeedce2, type: 3}
 --- !u!4 &1600816900
 Transform:
