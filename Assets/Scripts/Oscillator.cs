@@ -22,7 +22,7 @@ public class Oscillator : MonoBehaviour
         running = true;
     }
 
-    void OnAudioFilterRead(float[] data, int channels)
+    private void OnAudioFilterRead(float[] data, int channels)
     {
         if (!running)
             return;
@@ -39,11 +39,11 @@ public class Oscillator : MonoBehaviour
                 float panAmp = 1f;
                 if (i == 0)
                 {
-                    panAmp = Mathf.Clamp01((-pan+1)/2);
+                    panAmp = Mathf.Clamp01((-pan + 1) / 2);
                 }
                 else if (i == 1)
                 {
-                    panAmp = Mathf.Clamp01((pan+1)/2);
+                    panAmp = Mathf.Clamp01((pan + 1) / 2);
                 }
                 data[n * channels + i] += x * panAmp;
             }
