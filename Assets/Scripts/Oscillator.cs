@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class Synth : MonoBehaviour
+public class Oscillator : MonoBehaviour
 {
     public float frequency = 220f;
     public float amp = 0.5F;
@@ -10,12 +10,14 @@ public class Synth : MonoBehaviour
     private float phase = 0.0F;
     private double sampleRate = 0.0F;
     private bool running = false;
-    private CurveSampler sampler;
+
+    [SerializeField]
+    private Sampler sampler;
 
     void Start()
     {
         sampleRate = AudioSettings.outputSampleRate;
-        sampler = GetComponent<CurveSampler>();
+        sampler = GetComponent<Sampler>();
         running = true;
     }
 
@@ -37,7 +39,7 @@ public class Synth : MonoBehaviour
             }
 
             phase += (float)(frequency / sampleRate * 2 * Mathf.PI);
-            if(phase> 2 * Mathf.PI)
+            if (phase > 2 * Mathf.PI)
             {
                 phase -= 2 * Mathf.PI;
             }
@@ -46,6 +48,6 @@ public class Synth : MonoBehaviour
 
     private float EvaluateWaveshape(float phase)
     {
-        return sampler.EvaluateWaveshape(phase);
+        return sampler.Evaluate(phase / 2 / Mathf.PI);
     }
 }
