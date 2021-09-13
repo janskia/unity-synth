@@ -6,6 +6,7 @@ public class Oscillator : MonoBehaviour
 {
     public float frequency = 220f;
     public float amp = 0.5F;
+    public float pan = 0f;
 
     private float phase = 0.0F;
     private double sampleRate = 0.0F;
@@ -35,7 +36,16 @@ public class Oscillator : MonoBehaviour
 
             for (int i = 0; i < channels; i++)
             {
-                data[n * channels + i] += x;
+                float panAmp = 1f;
+                if (i == 0)
+                {
+                    panAmp = Mathf.Clamp01((-pan+1)/2);
+                }
+                else if (i == 1)
+                {
+                    panAmp = Mathf.Clamp01((pan+1)/2);
+                }
+                data[n * channels + i] += x * panAmp;
             }
 
             phase += (float)(frequency / sampleRate * 2 * Mathf.PI);
