@@ -9,6 +9,8 @@ public class MidiController : MonoBehaviour
     [SerializeField]
     private CompositeOscillator oscillator;
 
+    private int currentNote;
+
     void Start()
     {
         InputSystem.onDeviceChange += (device, change) =>
@@ -35,6 +37,8 @@ public class MidiController : MonoBehaviour
                 ));
 
                 oscillator.frequency = CalculateFrequency(note.noteNumber);
+                oscillator.isPlaying = true;
+                currentNote = note.noteNumber;
             };
 
             midiDevice.onWillNoteOff += (note) =>
@@ -46,6 +50,11 @@ public class MidiController : MonoBehaviour
                     (note.device as Minis.MidiDevice)?.channel,
                     note.device.description.product
                 ));
+
+                if (note.noteNumber == currentNote)
+                {
+                    oscillator.isPlaying = false;
+                }
             };
         };
     }

@@ -7,6 +7,7 @@ public class CompositeOscillator : MonoBehaviour
     public float frequency = 220f;
     public float amp = 0.5F;
     public float pan = 0f;
+    public bool isPlaying = true;
 
     [SerializeField]
     public int instances = 1;
@@ -17,9 +18,12 @@ public class CompositeOscillator : MonoBehaviour
     [SerializeField]
     public float volumeSpread;
     [SerializeField]
+    private float sustain;
+    [SerializeField]
     private Oscillator oscillatorPrefab;
 
     private List<Oscillator> oscillatorInstances = new List<Oscillator>();
+    private float currentAmp;
 
     private void Update()
     {
@@ -28,6 +32,15 @@ public class CompositeOscillator : MonoBehaviour
 
     private void Recalculate()
     {
+        if (isPlaying)
+        {
+            currentAmp = amp;
+        }
+        else
+        {
+            currentAmp *= sustain;
+        }
+
         for (int i = 0; i < instances || i < oscillatorInstances.Count; i++)
         {
             if (i < instances)
@@ -40,7 +53,7 @@ public class CompositeOscillator : MonoBehaviour
                 if (i < oscillatorInstances.Count)
                 {
                     oscillatorInstances[i].gameObject.SetActive(true);
-                    oscillatorInstances[i].amp = amp * Mathf.Pow(volumeSpread, IndexToParamSymmetric(i));
+                    oscillatorInstances[i].amp = currentAmp * Mathf.Pow(volumeSpread, IndexToParamSymmetric(i));
                     oscillatorInstances[i].frequency = frequency + frequencySpread * IndexToParam(i);
                     oscillatorInstances[i].pan = pan + panSpread * IndexToParam(i);
                 }

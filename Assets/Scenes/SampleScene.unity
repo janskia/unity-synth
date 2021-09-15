@@ -282,11 +282,13 @@ MonoBehaviour:
   frequency: 55
   amp: 0.5
   pan: 0
+  isPlaying: 1
   instances: 6
   frequencySpread: 1
   panSpread: 1
   volumeSpread: 0.3
-  oscillatorPrefab: {fileID: 6219348858909288903, guid: b72800d4cd2a1774fa72215354d08060, type: 3}
+  sustain: 0.99
+  oscillatorPrefab: {fileID: 2095547286}
 --- !u!4 &1600816900
 Transform:
   m_ObjectHideFlags: 0
@@ -301,6 +303,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2095547286 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5771955849745633020, guid: 6b41fd7d9d02f0a49aa41bf50aeedce2, type: 3}
+  m_PrefabInstance: {fileID: 5771955849378916315}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e37ec0b4cca9524a8aca8dfb876222f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3636955528393290676
 PrefabInstance:
   m_ObjectHideFlags: 0
