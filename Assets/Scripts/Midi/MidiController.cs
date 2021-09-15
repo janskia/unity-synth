@@ -7,11 +7,18 @@ using UnityEngine.InputSystem;
 public class MidiController : MonoBehaviour
 {
     [SerializeField]
+    private Vector2Int range;
+
     private CompositeOscillator oscillator;
 
     private int currentNote;
 
-    void Start()
+    private void Awake()
+    {
+        oscillator = GetComponent<CompositeOscillator>();
+    }
+
+    private void Start()
     {
         InputSystem.onDeviceChange += (device, change) =>
         {
@@ -36,9 +43,12 @@ public class MidiController : MonoBehaviour
                     note.device.description.product
                 ));
 
-                oscillator.frequency = CalculateFrequency(note.noteNumber);
-                oscillator.isPlaying = true;
-                currentNote = note.noteNumber;
+                if (note.noteNumber > range.x && note.noteNumber < range.y)
+                {
+                    oscillator.frequency = CalculateFrequency(note.noteNumber);
+                    oscillator.isPlaying = true;
+                    currentNote = note.noteNumber;
+                }
             };
 
             midiDevice.onWillNoteOff += (note) =>
@@ -51,9 +61,12 @@ public class MidiController : MonoBehaviour
                     note.device.description.product
                 ));
 
-                if (note.noteNumber == currentNote)
+                if (note.noteNumber > range.x && note.noteNumber < range.y)
                 {
-                    oscillator.isPlaying = false;
+                    if (note.noteNumber == currentNote)
+                    {
+                        oscillator.isPlaying = false;
+                    }
                 }
             };
         };

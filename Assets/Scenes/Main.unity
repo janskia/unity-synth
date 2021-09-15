@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &61645656
+--- !u!1 &384120218
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,42 +131,76 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 61645658}
-  - component: {fileID: 61645657}
+  - component: {fileID: 384120221}
+  - component: {fileID: 384120220}
+  - component: {fileID: 384120219}
   m_Layer: 0
-  m_Name: MidiController
+  m_Name: HighCompositeOscillator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &61645657
+--- !u!114 &384120219
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 61645656}
+  m_GameObject: {fileID: 384120218}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abbc94b2cc8ca384fb86566613e1bbda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oscillator: {fileID: 1600816899}
---- !u!4 &61645658
+  range: {x: 48, y: 96}
+--- !u!114 &384120220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384120218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96414e4222459647999b05d01c1e2df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frequency: 55
+  amp: 0.5
+  pan: 0
+  isPlaying: 0
+  instances: 6
+  frequencySpread: 1
+  panSpread: 1
+  volumeSpread: 0.3
+  sustain: 0.99
+  oscillatorPrefab: {fileID: 401488522}
+--- !u!4 &384120221
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 61645656}
+  m_GameObject: {fileID: 384120218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &401488522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1479364316398156404, guid: 739bb275283684a48a9fe89134ef7a60, type: 3}
+  m_PrefabInstance: {fileID: 3636955528393290676}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e37ec0b4cca9524a8aca8dfb876222f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,8 +294,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1600816900}
   - component: {fileID: 1600816899}
+  - component: {fileID: 1600816901}
   m_Layer: 0
-  m_Name: CompositeOscillator
+  m_Name: LowCompositeOscillator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -280,15 +315,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frequency: 55
-  amp: 0.5
+  amp: 0.8
   pan: 0
-  isPlaying: 1
-  instances: 6
+  isPlaying: 0
+  instances: 3
   frequencySpread: 1
   panSpread: 1
-  volumeSpread: 0.3
+  volumeSpread: 0.6
   sustain: 0.99
-  oscillatorPrefab: {fileID: 2095547286}
+  oscillatorPrefab: {fileID: 401488522}
 --- !u!4 &1600816900
 Transform:
   m_ObjectHideFlags: 0
@@ -297,23 +332,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600816898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2095547286 stripped
+--- !u!114 &1600816901
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5771955849745633020, guid: 6b41fd7d9d02f0a49aa41bf50aeedce2, type: 3}
-  m_PrefabInstance: {fileID: 5771955849378916315}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1600816898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e37ec0b4cca9524a8aca8dfb876222f, type: 3}
+  m_Script: {fileID: 11500000, guid: abbc94b2cc8ca384fb86566613e1bbda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range: {x: 0, y: 49}
 --- !u!1001 &3636955528393290676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -392,7 +429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6219348858909288905, guid: b72800d4cd2a1774fa72215354d08060, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6219348858909288905, guid: b72800d4cd2a1774fa72215354d08060, type: 3}
       propertyPath: m_LocalPosition.x
