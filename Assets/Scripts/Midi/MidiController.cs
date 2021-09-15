@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 
 public class MidiController : MonoBehaviour
 {
+    [SerializeField]
+    private CompositeOscillator oscillator;
+
     void Start()
     {
         InputSystem.onDeviceChange += (device, change) =>
@@ -15,7 +18,8 @@ public class MidiController : MonoBehaviour
             var midiDevice = device as Minis.MidiDevice;
             if (midiDevice == null) return;
 
-            midiDevice.onWillNoteOn += (note, velocity) => {
+            midiDevice.onWillNoteOn += (note, velocity) =>
+            {
                 // Note that you can't use note.velocity because the state
                 // hasn't been updated yet (as this is "will" event). The note
                 // object is only useful to specify the target note (note
@@ -29,9 +33,12 @@ public class MidiController : MonoBehaviour
                     (note.device as Minis.MidiDevice)?.channel,
                     note.device.description.product
                 ));
+
+                oscillator.frequency = CalculateFrequency(note.noteNumber);
             };
 
-            midiDevice.onWillNoteOff += (note) => {
+            midiDevice.onWillNoteOff += (note) =>
+            {
                 Debug.Log(string.Format(
                     "Note Off #{0} ({1}) ch:{2} dev:'{3}'",
                     note.noteNumber,
@@ -41,5 +48,12 @@ public class MidiController : MonoBehaviour
                 ));
             };
         };
+    }
+
+    private float CalculateFrequency(float noteNumber)
+    {
+        float root = Mathf.Pow(2, 1 / 12f);
+        float firstNoteFrequency = 440f / Mathf.Pow(2, 6);
+        return firstNoteFrequency * Mathf.Pow(root, noteNumber);
     }
 }
