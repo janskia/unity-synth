@@ -317,7 +317,7 @@ MonoBehaviour:
   frequency: 55
   amp: 0.8
   pan: 0
-  isPlaying: 0
+  isPlaying: 1
   instances: 3
   frequencySpread: 1
   panSpread: 1
