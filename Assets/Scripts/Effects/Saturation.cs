@@ -4,7 +4,11 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class Saturation : MonoBehaviour
 {
-    public AnimationCurve curve;
+    [SerializeField]
+    private AnimationCurve curve;
+    [SerializeField]
+    [Range(0, 1)]
+    private float amount = 1f;
 
     private float[] samples = new float[256];
     private bool running;
@@ -35,7 +39,8 @@ public class Saturation : MonoBehaviour
             for (int i = 0; i < channels; i++)
             {
                 AudioHelper.Evaluate((data[n * channels + i] + 1) / 2, samples.Length, out int sampleIndex, out float rest);
-                data[n * channels + i] = Mathf.Lerp(samples[sampleIndex], samples[sampleIndex + 1], rest);
+                float saturatedValue = Mathf.Lerp(samples[sampleIndex], samples[sampleIndex + 1], rest);
+                data[n * channels + i] = Mathf.Lerp(data[n * channels + i], saturatedValue, amount);
             }
         }
     }
