@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WavePreview : MonoBehaviour
@@ -16,7 +14,7 @@ public class WavePreview : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         ShowValues(new float[]
         {
-            0,1,0.2f,-0.5f
+            0f, 1f, 0.2f, -0.5f
         });
     }
 
