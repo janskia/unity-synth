@@ -1,6 +1,9 @@
 using System;
 using UnityEngine;
 
+/// <summary>
+/// Oscillator generates audio with given frequency, amplitude and panorama. Uses <see cref="Sampler"/> for waveform generation.
+/// </summary>
 [RequireComponent(typeof(AudioSource))]
 public class Oscillator : MonoBehaviour
 {

@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Debug script for visualising a waveform.
+/// </summary>
 public class WavePreview : MonoBehaviour
 {
     [SerializeField]

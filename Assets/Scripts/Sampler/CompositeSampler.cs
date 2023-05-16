@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Wraps 4 different samplers and blend waveforms between them. It's possible to randomize blend values to create wobbly sound.
+/// </summary>
 public class CompositeSampler : Sampler
 {
     public WavePreview wavePreview;
@@ -19,8 +22,6 @@ public class CompositeSampler : Sampler
 
     private void Update()
     {
-        //blend1 = Mathf.Clamp01(Input.mousePosition.x / 1000f);
-        //blend2 = Mathf.Clamp01(Input.mousePosition.y / 1000f);
         if (randomize)
         {
             blend1 = Mathf.Clamp01(blend1 + Random.Range(-randomizationSpeed, randomizationSpeed));

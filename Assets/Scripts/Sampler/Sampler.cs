@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Sampler class provides an <see cref="Evaluate"/> method for reading waveform value at given phase. How waveform is generated depends on its implementation.
+/// </summary>
 public abstract class Sampler : MonoBehaviour
 {
     public int samplesArraySize = 256;

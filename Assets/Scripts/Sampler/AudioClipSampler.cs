@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+///  Generates waveform stored as an audio clip. Waveform should be prepared beforehand in external audio editor.
+/// </summary>
 public class AudioClipSampler : Sampler
 {
     public AudioClip clip;

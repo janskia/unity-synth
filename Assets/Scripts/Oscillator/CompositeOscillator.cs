@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Composite oscillator spawns desired number of oscillator instances and alter it properties slightly (detune, change panorama position) to create more spatial sound.
+/// </summary>
 public class CompositeOscillator : MonoBehaviour
 {
     public float frequency = 220f;

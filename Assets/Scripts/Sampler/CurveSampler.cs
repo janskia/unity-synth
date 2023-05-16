@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Generates waveform stored as animation curve. Easy editable from the editor.
+/// </summary>
 public class CurveSampler : Sampler
 {
     public AnimationCurve curve;

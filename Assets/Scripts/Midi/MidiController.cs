@@ -1,6 +1,10 @@
+using Minis;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Handles midi keyboard using Minis plugin. Detects notes played on midi keyboard, maps it to frequencies and appplies it to an oscillator. Based on Minis example code.
+/// </summary>
 public class MidiController : MonoBehaviour
 {
     [SerializeField]
@@ -21,7 +25,7 @@ public class MidiController : MonoBehaviour
         {
             if (change != InputDeviceChange.Added) return;
 
-            var midiDevice = device as Minis.MidiDevice;
+            MidiDevice midiDevice = device as MidiDevice;
             if (midiDevice == null) return;
 
             midiDevice.onWillNoteOn += (note, velocity) =>
@@ -36,7 +40,7 @@ public class MidiController : MonoBehaviour
                     note.noteNumber,
                     note.shortDisplayName,
                     velocity,
-                    (note.device as Minis.MidiDevice)?.channel,
+                    (note.device as MidiDevice)?.channel,
                     note.device.description.product
                 ));
 
@@ -54,7 +58,7 @@ public class MidiController : MonoBehaviour
                     "Note Off #{0} ({1}) ch:{2} dev:'{3}'",
                     note.noteNumber,
                     note.shortDisplayName,
-                    (note.device as Minis.MidiDevice)?.channel,
+                    (note.device as MidiDevice)?.channel,
                     note.device.description.product
                 ));
 
