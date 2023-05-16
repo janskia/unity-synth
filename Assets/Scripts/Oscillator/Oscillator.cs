@@ -6,12 +6,12 @@ public class Oscillator : MonoBehaviour
 {
     public float frequency = 220f;
     [Range(0, 1)]
-    public float amp = 0.5F;
+    public float amp = 0.5f;
     [Range(-1, 1)]
     public float pan = 0f;
 
-    private float phase = 0.0F;
-    private double sampleRate = 0.0F;
+    private float phase = 0.0f;
+    private double sampleRate = 0.0f;
     private bool running = false;
 
     [SerializeField]
