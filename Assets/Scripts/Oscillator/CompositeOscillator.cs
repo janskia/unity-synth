@@ -27,7 +27,7 @@ public class CompositeOscillator : MonoBehaviour
     private float sustain;
     [SerializeField]
     private Oscillator oscillatorPrefab;
-
+    [SerializeField]
     private List<Oscillator> oscillatorInstances = new List<Oscillator>();
     private float currentAmp;
 
