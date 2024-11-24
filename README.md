@@ -11,7 +11,8 @@ Main components:
 - **Effects** - audio processing components which takes audio input, processes it and returns audio output. Currently only simple `Saturation` plugin is implemented.
 
 ### Demo
-Take a look on the demo of first iteration here:
+Take a look on the demo of first iteration on youtube:
+
 [![Unity synth demo](https://img.youtube.com/vi/6o2-Eeih-KI/0.jpg)](https://www.youtube.com/watch?v=6o2-Eeih-KI)
 
 ### !!! Caution !!!
