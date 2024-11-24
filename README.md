@@ -10,5 +10,9 @@ Main components:
 - **Oscillators** - uses samplers and generate sound with given waveform, frequency, amplitude and panorama. Can be groupped in `CompositeOscillator` which spawns desired number of oscillators and alter it properties slightly (detune, change panorama position) to create more spatial sound.
 - **Effects** - audio processing components which takes audio input, processes it and returns audio output. Currently only simple `Saturation` plugin is implemented.
 
+### Demo
+Take a look on the demo of first iteration here:
+[![Unity synth demo](https://img.youtube.com/vi/6o2-Eeih-KI/0.jpg)](https://www.youtube.com/watch?v=6o2-Eeih-KI)
+
 ### !!! Caution !!!
 When dealing with this plugin (and audio development in general) always do this at low volume, preferably on speakers not headphones. Setting wrong input values in runtime or bugs in audio code may possibly result in extremely loud noise and damage your hearing if your audio sustem is too loud.
