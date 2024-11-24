@@ -14,6 +14,7 @@ Main components:
 Take a look on the demo of first iteration on youtube:
 
 [![Unity synth demo](https://img.youtube.com/vi/6o2-Eeih-KI/0.jpg)](https://www.youtube.com/watch?v=6o2-Eeih-KI)
+
 [Open on youtube](https://www.youtube.com/watch?v=6o2-Eeih-KI)
 
 ### !!! Caution !!!
