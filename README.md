@@ -14,6 +14,7 @@ Main components:
 Take a look on the demo of first iteration on youtube:
 
 [![Unity synth demo](https://img.youtube.com/vi/6o2-Eeih-KI/0.jpg)](https://www.youtube.com/watch?v=6o2-Eeih-KI)
+[Open on youtube](https://www.youtube.com/watch?v=6o2-Eeih-KI)
 
 ### !!! Caution !!!
 When dealing with this plugin (and audio development in general) always do this at low volume, preferably on speakers not headphones. Setting wrong input values in runtime or bugs in audio code may possibly result in extremely loud noise and damage your hearing if your audio sustem is too loud.
