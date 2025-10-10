@@ -8,6 +8,7 @@ public class RadialTextureSampler : Sampler
     public RenderTexture renderTexture;
     public Texture2D texture;
     public WavePreview preview;
+    public RadialSamplingPreview samplingPreview;
     public float r;
     public float scaleX = 1;
     public float scaleY = 1;
@@ -30,5 +31,6 @@ public class RadialTextureSampler : Sampler
             samples[i] = Mathf.Clamp(val, -1f, 1f);
         }
         preview.ShowValues(samples);
+        samplingPreview.Set(r, scaleX, scaleY, offsetX, offsetY);
     }
 }
