@@ -5,6 +5,8 @@ using UnityEngine;
 /// </summary>
 public class RadialTextureSampler : Sampler
 {
+    private const float ChangeSpeedFactor = 0.3f;
+
     public RenderTexture renderTexture;
     public Texture2D texture;
     public WavePreview preview;
@@ -28,7 +30,7 @@ public class RadialTextureSampler : Sampler
         for (int i = 0; i < samples.Length; i++)
         {
             var val = texture.GetPixelBilinear(0.5f + Mathf.Cos((float)i / samples.Length * 2 * Mathf.PI) * r * scaleX + offsetX, 0.5f + Mathf.Sin((float)i / samples.Length * 2 * Mathf.PI) * r * scaleY + offsetY).r;
-            samples[i] = Mathf.Clamp(val, -1f, 1f);
+            samples[i] = samples[i] + ChangeSpeedFactor * (Mathf.Clamp(val, -1f, 1f) - samples[i]);
         }
         preview.ShowValues(samples);
         samplingPreview.Set(r, scaleX, scaleY, offsetX, offsetY);
