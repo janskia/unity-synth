@@ -1029,7 +1029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e37ec0b4cca9524a8aca8dfb876222f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frequency: 200
+  frequency: 300
   amp: 0.5
   pan: -1
   sampler: {fileID: 0}
@@ -3108,8 +3108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e37ec0b4cca9524a8aca8dfb876222f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frequency: 202
-  amp: 0.5
+  frequency: 363.6
+  amp: 0.45
   pan: 1
   sampler: {fileID: 0}
 --- !u!82 &1953767294
