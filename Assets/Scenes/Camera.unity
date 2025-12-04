@@ -349,7 +349,7 @@ Transform:
   - {fileID: 1602423201}
   - {fileID: 810275286}
   m_Father: {fileID: 1164579281}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &207893482
 MonoBehaviour:
@@ -577,12 +577,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418396547}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abbc94b2cc8ca384fb86566613e1bbda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: {x: 48, y: 96}
+  range: {x: 12, y: 96}
 --- !u!114 &418396549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,12 +603,12 @@ MonoBehaviour:
   frequencySpread: 1
   panSpread: 1
   volumeSpread: 0.3
-  sustain: 0.99
+  sustain: 0.1
   oscillatorPrefab: {fileID: 0}
   oscillatorInstances:
   - {fileID: 207893482}
-  - {fileID: 445237606}
-  - {fileID: 991761717}
+  - {fileID: 584510032}
+  - {fileID: 1953767293}
 --- !u!4 &418396550
 Transform:
   m_ObjectHideFlags: 0
@@ -741,7 +741,7 @@ Transform:
   m_Children:
   - {fileID: 1201343621}
   m_Father: {fileID: 1164579281}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &445237606
 MonoBehaviour:
@@ -993,7 +993,7 @@ Transform:
   - {fileID: 1049971890}
   - {fileID: 152707670}
   m_Father: {fileID: 1164579281}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &584510031
 MonoBehaviour:
@@ -1553,7 +1553,7 @@ Transform:
   m_Children:
   - {fileID: 1051687967}
   m_Father: {fileID: 1164579281}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &991761717
 MonoBehaviour:
@@ -2243,6 +2243,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 418396550}
+  - {fileID: 1658638026}
   - {fileID: 207893480}
   - {fileID: 445237604}
   - {fileID: 991761715}
@@ -2954,6 +2955,56 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!1 &1658638025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1658638026}
+  - component: {fileID: 1658638027}
+  m_Layer: 0
+  m_Name: MidiMultivoiceController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1658638026
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658638025}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1164579281}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1658638027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658638025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab9102059aa0d0419fcb40b529ae426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detune: 0.001
+  range: {x: 1, y: 90}
+  oscillators:
+  - {fileID: 207893482}
+  - {fileID: 584510032}
+  - {fileID: 1953767293}
 --- !u!1 &1854651399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3072,7 +3123,7 @@ Transform:
   - {fileID: 1977507552}
   - {fileID: 1014595020}
   m_Father: {fileID: 1164579281}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1953767292
 MonoBehaviour:
